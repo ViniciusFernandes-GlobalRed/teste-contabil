@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>95c8036b-bb53-4faf-993f-b961c086d07a</groupId>
-	<artifactId>teste2</artifactId>
+	<artifactId>teste-salvacontabil</artifactId>
 	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
 
