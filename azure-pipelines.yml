@@ -3,15 +3,16 @@ trigger:
    include:
    - master
    - releases/*
-  pool: MulePool 
-  steps:
+   - main
+pool: teste
+steps:
   - task: Maven@3
-  inputs:
-   mavenPomFile: 'pom.xml'
-   mavenOptions: '-Xmx3072m'
-   javaHomeOption: 'JDKVersion'
-   jdkVersionOption: '1.11' #versao do seu jdk se for o java 11, será 1.11, se for java 17, será 1.17
-   jdkArchitectureOption: 'x64'
-   publishJUnitResults: true
-   testResultsFiles: '**/surefire-reports/TEST-*.xml'
-   goals: 'clean deploy -DmuleDeploy -Denvironment=$(environment) -DmuleVersion=$(muleVersion) -Dserver=$(server) -DapplicationName=$(applicationName) -Dreplicas=$(replicas) -DvCores=$(vCores)'
+    inputs:
+      mavenPomFile: 'pom.xml'
+      mavenOptions: '-Xmx3072m'
+      javaHomeOption: 'JDKVersion'
+      jdkVersionOption: '1.11' #versao do seu jdk se for o java 11, será 1.11, se for java 17, será 1.17
+      jdkArchitectureOption: 'x64'
+      publishJUnitResults: true
+      testResultsFiles: '**/surefire-reports/TEST-*.xml'
+      goals: 'clean deploy -DmuleDeploy -Denvironment=$(environment) -DmuleVersion=$(muleVersion) -Dserver=$(server) -DapplicationName=$(applicationName) -Dreplicas=$(replicas) -DvCores=$(vCores)'
