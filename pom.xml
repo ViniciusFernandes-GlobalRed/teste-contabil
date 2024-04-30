@@ -9,7 +9,7 @@
 	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
 
-	<name>teste2</name>
+	<name>teste-salvacontabil</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -31,17 +31,17 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
-						<configuration>
+				<configuration>
 					<cloudhub2Deployment>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<provider>MC</provider>
-						<environment>Sandbox</environment>
+						<environment>${environment}</environment>
 						<target>Cloudhub-US-East-2</target>
-						<muleVersion>4.6.1</muleVersion>
-						<server>Repository</server>
-						<applicationName>application-azure-mule</applicationName>
-						<replicas>1</replicas>
-						<vCores>0.1</vCores>
+						<muleVersion>${muleVersion}</muleVersion>
+						<server>${server}</server>
+						<applicationName>${applicationName}</applicationName>
+						<replicas>${replicas}</replicas>
+						<vCores>${vCores}</vCores>
 						<properties>
 							<http.port>8081</http.port>
 						</properties>
